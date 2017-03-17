@@ -10,26 +10,26 @@ namespace :book do
   desc 'build basic book formats'
   task :build => :prebuild do
     puts "Converting to HTML..."
-    `bundle exec asciidoctor Book_template_top.asc -o My_book.html`
-    puts " -- HTML output at My_book.html"
+    `bundle exec asciidoctor VizWorkshop.asc -o VizWorkshop.html`
+    puts " -- HTML output at VizWorkshop.html"
 
     puts "Converting to PDF... (this one takes a while)"
-    `bundle exec asciidoctor-pdf Book_template_top.asc -o My_book.pdf`
-    puts " -- PDF  output at My_book.pdf"
+    `bundle exec asciidoctor-pdf VizWorkshop.asc -o VizWorkshop.pdf`
+    puts " -- PDF  output at VizWorkshop.pdf"
   end
   
   desc 'build html book formats'
   task :build_html => :prebuild do
     puts "Converting to HTML..."
-    `bundle exec asciidoctor Book_template_top.asc -o My_book.html`
-    puts " -- HTML output at My_book.html"
+    `bundle exec asciidoctor VizWorkshop.asc -o VizWorkshop.html`
+    puts " -- HTML output at VizWorkshop.html"
   end 
   
   desc 'build html with github stylesheet'
   task :build_html_gitcss => :prebuild do
       puts "Converting to HTML with github stylesheet..."
-      `bundle exec asciidoctor Book_template_top.asc -a stylesheet=github.css -a stylesdir=./stylesheets -o My_book_github_style.html`
-      puts " -- HTML output at My_book_github_style.html"
+      `bundle exec asciidoctor VizWorkshop.asc -a stylesheet=github.css -a stylesdir=./stylesheets -o VizWorkshop_github_style.html`
+      puts " -- HTML output at VizWorkshop_github_style.html"
   end  
   
 end
